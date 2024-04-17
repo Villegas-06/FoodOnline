@@ -19,6 +19,7 @@ export class LoginComponent {
   constructor(private userService: UserService, private router: Router) {}
 
   login(): void {
+
     const user = this.userService.login(this.username, this.password);
 
     if (user) {
@@ -28,7 +29,7 @@ export class LoginComponent {
         title: 'Correcto',
         text: 'Autenticado, seras dirido a la pagina principal',
       });
-      this.router.navigate(['/register']);
+      this.router.navigate(['/admin-home']);
     } else {
       Swal.fire({
         icon: 'error',
